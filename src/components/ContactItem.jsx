@@ -5,8 +5,8 @@ const ContactItem = ({ name, numbers, adress, emails, id, edit, remove }) => {
       <div className="card-head position-relative">
         <div className="card-title pt-2 text-dark "><h3>{name}</h3></div>
         <div className="position-absolute delete cursor-pointer">
-          <button onClick={() => remove(id)} className='btn btn-light'><i className="fa text-danger fa-trash"></i></button>
-          <button onClick={() => edit(id)} className='btn btn-light'><i className="fa-solid fa-user-pen"></i></button>
+          <button onClick={() => remove(id)} className='btn btn-outline-danger'><i className="fa fa-trash"></i></button>
+          <button onClick={() => edit(id)} className=' ml-1 btn btn-outline-primary'><i className="fa-solid fa-user-pen"></i></button>
         </div>
       </div>
       <div className="card-body">

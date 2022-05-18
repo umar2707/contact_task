@@ -50,3 +50,6 @@
     cursor: pointer;
     text-decoration: underline;
 }
+.input::placeholder{
+    color: rgba(58, 58, 58, 0.430);
+}

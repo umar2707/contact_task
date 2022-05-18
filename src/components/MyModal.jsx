@@ -1,15 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Button, Modal, Row } from 'react-bootstrap'
 import MyInput from './MyInput'
 
 const MyModal = (props) => {
-    const c = props.contact
-    const [editedContact,setEditedContact] = useState([])
-    useEffect(({props})=>{
-        setEditedContact(props.contact)
-        console.log('11');
-    },[editedContact])
-    console.log(editedContact);
+    const {contact} = props
+    const [editedName,setEditedName] = useState('')
+    const [editedEmail,setEditedEmail] = useState([])
+    //funksiya
+    const funcEmail= (e,index)=>{
+        console.log({index:e.target.value})
+    }
+    console.log(contact);
+    
     return (
         <Modal
             {...props}
@@ -17,17 +19,16 @@ const MyModal = (props) => {
             aria-labelledby="contained-modal-title-vcenter"
             centered
         >
-            
             <Modal.Body>
                 <Row className='px-2' >
                     Name:
-                    <MyInput value={c.name} />
+                    <MyInput value={editedName} placeholder={contact.name}  onChange={(e)=>setEditedName(e.target.value)}/>
                 </Row>
                 <Row className='px-2'>
                     Email:
-                    {c.email?.map((a,index)=>(
+                    {contact.email?.map((a,index)=>(
                         <div className='d-flex w-100 align-items-center'>
-                            {index+1} <MyInput value={a}/>
+                            {index+1} <MyInput placeholder={a} onChange={(e,index)=>funcEmail(e,index)}/>
                             <Button variant='outline-danger m-2' size='sm'>X</Button>
                         </div>
                     ))}
@@ -36,7 +37,8 @@ const MyModal = (props) => {
                                  
             </Modal.Body>
             <Modal.Footer>
-                <Button onClick={props.onHide}>Close</Button>
+                <Button variant='success'>Save changes</Button>
+                <Button variant='secondary' onClick={props.onHide}>Close</Button>
             </Modal.Footer>
         </Modal>
     )
