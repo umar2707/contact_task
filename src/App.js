@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import ContactForm from "./components/ContactForm";
 import ContactList from "./components/ContactList";
 import MyModal from "./components/MyModal";
-import MySelect from "./components/MySelect";
 import "./style/App.css";
 
 function App() {
@@ -33,7 +32,7 @@ function App() {
     setContacts(contacts.filter((c)=>c.id !== contact))
   }
   const editContact = (contact)=>{
-    const editContacta = contacts.find((f)=>f.id == contact)
+    const editContacta = contacts.find((f)=>f.id === contact)
     setModalShow(true)
     setForEdit(editContacta)
   }
