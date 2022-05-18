@@ -57,7 +57,7 @@ function App() {
             show={modalShow}
             onHide={() => setModalShow(false)}
             contact={forEdit}
-            editedcon={editedContact}
+            editedCont={editedContact}
           />
         )}
       </div>

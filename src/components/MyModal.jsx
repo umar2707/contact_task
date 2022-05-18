@@ -87,7 +87,7 @@ const MyModal = (props) => {
         }
         //o'zgartirish kiritilgan contactni App.js ga yuboramiz
         console.log(editedContact);
-        props.editedcon(editedContact);
+        props.editedCont(editedContact);
     }
 
     return (
