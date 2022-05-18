@@ -46,8 +46,11 @@
 .form-group{
     margin-bottom: 5px;
 }
-.add_span{
+.add_button{
     cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: transparent;
     text-decoration: underline;
 }
 .input::placeholder{

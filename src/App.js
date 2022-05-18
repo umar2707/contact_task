@@ -12,7 +12,7 @@ function App() {
       name: "Umar",
       tel: [
         998948900817,
-        333333,
+        998991234567,
       ],
       adress: [
         'nizomiy',
@@ -33,9 +33,15 @@ function App() {
     setContacts(contacts.filter((c)=>c.id !== contact))
   }
   const editContact = (contact)=>{
-    const editContacta=contacts.find((f)=>f.id == contact)
+    const editContacta = contacts.find((f)=>f.id == contact)
     setModalShow(true)
     setForEdit(editContacta)
+  }
+  const editedContact = (contact)=>{
+    // const resultContact = contacts.find((f)=>f.id == contact.id)
+    const reCon = contacts.filter((c)=>c.id !== contact.id)
+    // setContacts([reCon,contact])
+    console.log(reCon);
   }
   return (
     <div className="App">
@@ -51,6 +57,7 @@ function App() {
             show={modalShow}
             onHide={() => setModalShow(false)}
             contact={forEdit}
+            editedcon={editedContact}
           />
         )}
       </div>
